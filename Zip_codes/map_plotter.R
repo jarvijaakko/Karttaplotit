@@ -10,3 +10,5 @@ map_plotter <- function(jee_final){
               legend.spacing = unit(2, 'cm'),
               legend.text = element_blank())
 }
+
+# Jee
