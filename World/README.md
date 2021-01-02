@@ -10,4 +10,4 @@ I have included also another map that is slightly more fundamental.
 
 ![USA_China](https://user-images.githubusercontent.com/69734538/103465580-d2d21e80-4d45-11eb-8ebc-98e37b924fa8.jpeg)
 
-It is easy to construct any indicator (discrete or continuous) given the example data set included.
+It is easy to construct any indicator (discrete or continuous) given the example data set included. I've also made the modification of a desired colormap as easy as possible. The examples above use high contrast color pairs for clarity.
