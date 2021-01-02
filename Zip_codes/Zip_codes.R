@@ -45,19 +45,19 @@ if(indikaattori == ""){
   indikaattori <- indikaattori
 }
 if(indikaattori != ""){
-  indikaattori <- read.csv2(indikaattori, header = T, stringsAsFactors = F)
+  indikaattori <- read.csv2(paste0('data/', indikaattori), header = T, stringsAsFactors = F)
 }
 ## Lue indikaattori muodossa: Rivit: 3026 riviä (yksi joka postinumeroalueelle), Sarakkeet: [Zip, Income] 
 
 ## Downloading a pre-defined list of municipality names from an external csv file
-Municipalities <- read.csv2("Kunnat_Suomi.csv", header = T, stringsAsFactors = F)
+Municipalities <- read.csv2("data/Kunnat_Suomi.csv", header = T, stringsAsFactors = F)
 
 ## Reading the data for all zip code areas that consist of only one geographical region
 # Reading the regions of geometry type polygon
-spdf <- readOGR(dsn = "Postinumeroalueet_2016.geojson", require_geomType = "wkbPolygon")
+spdf <- readOGR(dsn = "data/Postinumeroalueet_2016.geojson", require_geomType = "wkbPolygon")
 
 ## Reading the data for all zip code areas that consist of more than one geographical region (e.g. islands, consolidations of municipalities..)
-spdf2 <- sf::st_read("Postinumeroalueet_2016.geojson")
+spdf2 <- sf::st_read("data/Postinumeroalueet_2016.geojson")
 
 # Checking the indices that have GEOMETRYCOLLECTION as geometry type
 # This means a list of polygons that can't be plotted as is (one polygon) but as separate polygons

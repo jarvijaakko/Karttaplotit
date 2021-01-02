@@ -18,7 +18,7 @@ for(i in unique(plot.data$id)){
 }
 for(i in unique(plot.data$zip)){
   index_temp <- which(plot.data$zip == i)
-  if(is.empty(indikaattori[indikaattori$Zip == i,2]) == F){
+  if(is_empty(indikaattori[indikaattori$Zip == i,2]) == F){
     plot.data$Indicator[index_temp] <- indikaattori[indikaattori$Zip == i,2]
   }
   else{
