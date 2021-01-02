@@ -8,7 +8,7 @@ dev.off()
 cat("\014")
 
 ############Valintaruutu################
-kaupunki <- "Vantaa"
+kaupunki <- "Helsinki"
 alue <- ""
 indikaattori <- "Income.csv"
 
@@ -31,17 +31,15 @@ library(ggpubr)
 library(sf)
 library(mapproj)
 
-## Index (UPDATE!)
 ## This script consists of 5 parts:
-# 1.) Data manipulation
-# 2.) Subset selection
-# 3.) Subset creation
-# 4.) Assigning data across the zip code regions
-# 5.) Plotting the final maps
+# 1.) Manipulate data
+# 2.) Select subset
+# 3.) Create subset
+# 4.) Assign data across the zip code regions
+# 5.) Plot the final maps
 
 
 ## 1.) Data manipulation ##
-
 # Reading a possible indicator into a data frame
 if(indikaattori == ""){
   indikaattori <- indikaattori
@@ -88,14 +86,12 @@ Zips <- append(Zip_codes, Zip_codes2)
 
 
 ## 2.) Choosing the appropriate subset to be used in plotting ##
-
 # Choosing the appropriate subsets
 source("Valitsin.R")
 subset_valitsin(kaupunki, alue)
 
 
 ## 3.) Forming data frames containing only the essential information about the regions ##
-
 ## Forming first the data frames containing only the essential information (Zip set 1 (spdf) - single regions)
 jee <<- ggplot2::fortify(spdf, name = "name")
 if(koko != 1){
