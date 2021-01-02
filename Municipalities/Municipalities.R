@@ -6,7 +6,6 @@
 rm(list=(ls()))
 dev.off()
 cat("\014")
-#setwd('/home/vesis/Documents/Karttaplotit/Municipalities')
 
 # Libraries
 library(ggplot2)
